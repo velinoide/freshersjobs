@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Freshers Job Alerts | Jobs, Walk-ins & Hiring Updates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+    color:#e6e9f0;
+    overflow-x:hidden;
+}
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#0541c1;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #edf0f4;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-icon{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#fafafa;
+color:#000;
+font-size:28px;
+font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-text h1{
+font-size:24px;
+color:#f7f6f3;
+}
+
+.logo-text p{
+font-size:12px;
+color:#cbd5e1;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+nav a:hover{
+color:#facc15;
+}
+
+/* HERO */
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(135deg,#638fe6,#022d97);
+}
+
+.hero h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.hero-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn-primary{
+background:#ffffff;
+color:black;
+}
+
+.btn-secondary{
+border:2px solid #facc15;
+color:#facc15;
+}
+
+/* LOGO SLIDER */
+
+.slider-section{
+padding:60px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+color:#fafafa;
+margin-bottom:30px;
+}
+
+.slider{
+overflow:hidden;
+background:white;
+padding:20px 0;
+}
+
+.slide-track{
+display:flex;
+width:calc(220px * 20);
+animation:scroll 35s linear infinite;
+}
+
+.slide-track img{
+width:180px;
+height:80px;
+object-fit:contain;
+margin:0 20px;
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(calc(-220px * 10));
+}
+}
+
+/* QUICK APPLY */
+
+.quick-apply{
+padding:70px 8%;
+}
+
+.company-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.company-grid a{
+background:#1a36d6;
+color:rgb(249, 248, 248);
+padding:18px;
+text-align:center;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.company-grid a:hover{
+transform:translateY(-4px);
+}
+
+/* SEARCH */
+
+.search-box{
+padding:40px 8%;
+}
+
+.search-box input{
+width:100%;
+padding:16px;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+
+/* JOBS */
+
+.jobs{
+padding:60px 8%;
+}
+
+.job-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.job-card{
+background:#111827;
+padding:25px;
+border-radius:15px;
+border:1px solid #1f2937;
+transition:0.3s;
+}
+
+.job-card:hover{
+transform:translateY(-5px);
+border-color:#fafafa;
+}
+
+.job-card h3{
+margin-bottom:15px;
+color:#ffffff;
+}
+
+.job-card p{
+margin-bottom:8px;
+color:#eceef0;
+}
+
+.job-card button{
+margin-top:15px;
+background:#ffffff;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* CATEGORIES */
+
+.categories{
+padding:60px 8%;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.category{
+background:#0a44c2;
+padding:25px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+}
+
+/* SOCIAL */
+
+.social{
+padding:60px 8%;
+text-align:center;
+}
+
+.social-links{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.social-links a{
+background:#2d20dde5;
+padding:15px 25px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+color:rgb(255, 255, 255);
+}
+
+/* FOOTER */
+
+footer{
+margin-top:50px;
+padding:25px;
+text-align:center;
+background:#111827;
+color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
+/* ANIMATED BACKGROUND */
+
+body{
+background:#05277e;
+color:white;
+overflow-x:hidden;
+}
+
+.particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+z-index:-1;
+}
+
+.particles span{
+position:absolute;
+display:block;
+width:25px;
+height:25px;
+background:rgba(198, 200, 235, 0.883);
+border-radius:50%;
+animation:float 15s linear infinite;
+}
+
+.particles span:nth-child(1){
+left:10%;
+animation-duration:15s;
+}
+
+.particles span:nth-child(2){
+left:20%;
+animation-duration:20s;
+}
+
+.particles span:nth-child(3){
+left:35%;
+animation-duration:17s;
+}
+
+.particles span:nth-child(4){
+left:50%;
+animation-duration:22s;
+}
+
+.particles span:nth-child(5){
+left:65%;
+animation-duration:18s;
+}
+
+.particles span:nth-child(6){
+left:80%;
+animation-duration:24s;
+}
+
+.particles span:nth-child(7){
+left:90%;
+animation-duration:16s;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-100px) scale(1.5);
+opacity:0;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="particles">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    </div>
+<div class="logo">
+
+  <div class="logo-icon">
+    <img src="https://i.postimg.cc/52gyc2ZD/Chat-GPT-Image-May-23-2026-02-06-09-PM-2.png" alt="Freshers Job Alerts Logo">
+</div>
+<style>.logo-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}</style>
+
+<div class="logo-text">
+<h1>Freshers Job Alerts</h1>
+<p>Daily Walk-ins & Hiring Updates</p>
+</div>
+
+</div>
+
+<nav>
+<a href="#jobs">Jobs</a>
+<a href="#apply">Apply</a>
+<a href="#categories">Categories</a>
+<a href="#social">Social</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+  <h2>
+    🚀 Freshers Job Alerts
+    </h2>
+    
+    <p>
+    Daily Walk-ins • Freshers Hiring • Off-Campus Drives • Internships
+    </p>
+
+<p>
+Get daily hiring updates, walk-in drives, off-campus opportunities,
+IT and Non-IT jobs from top companies across India.
+</p>
+
+
+<section class="social" id="social">
+
+  <h2 class="section-title">Join Our Community</h2>
+  
+  <div class="social-links">
+  
+  <a href="https://instagram.com/freshers.job.alerts"
+     target="_blank">
+     Follow Instagram
+  </a>
+  
+  <!-- <a href="YOUR_TELEGRAM_LINK"
+     target="_blank">
+     📢 Join Telegram
+  </a> -->
+  
+  <!-- <a href="YOUR_WHATSAPP_LINK"
+     target="_blank">
+     💬 Join WhatsApp
+  </a> -->
+  
+  </div>
+  
+  </section>
+
+</section>
+
+
+
+<section class="slider-section">
+
+<h2 class="section-title">Top Hiring Companies</h2>
+
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="https://i.postimg.cc/5tXxZ2xZ/amazon-logo-1.webp">
+<img src="https://i.postimg.cc/cJvsVLsj/hcl.png">
+<img src="https://i.postimg.cc/tgsXL4X8/ibm.png">
+<img src="https://i.postimg.cc/jjDsGSsp/infosys.png">
+<img src="https://i.postimg.cc/HLrpfkYG/microsoft.png">
+<img src="https://i.postimg.cc/vm4QpZYw/nvidia.png">
+<img src="https://i.postimg.cc/rpD8vwVL/tcs.png">
+<img src="https://i.postimg.cc/PqCtB5XH/techm.png">
+<img src="https://i.postimg.cc/5tXxZ241/wipro.jpg">
+<img src="https://i.postimg.cc/jjDsGSxx/zf.png">
+<img src="https://i.postimg.cc/PqCtB5t3/accemture.jpg">
+<img src="https://i.postimg.cc/cJvsVLs2/capgemini.jpg">
+
+
+<img src="https://i.postimg.cc/5tXxZ2xZ/amazon-logo-1.webp">
+<img src="https://i.postimg.cc/cJvsVLsj/hcl.png">
+<img src="https://i.postimg.cc/tgsXL4X8/ibm.png">
+<img src="https://i.postimg.cc/jjDsGSsp/infosys.png">
+<img src="https://i.postimg.cc/HLrpfkYG/microsoft.png">
+<img src="https://i.postimg.cc/vm4QpZYw/nvidia.png">
+<img src="https://i.postimg.cc/rpD8vwVL/tcs.png">
+<img src="https://i.postimg.cc/PqCtB5XH/techm.png">
+<img src="https://i.postimg.cc/5tXxZ241/wipro.jpg">
+<img src="https://i.postimg.cc/jjDsGSxx/zf.png">
+<img src="https://i.postimg.cc/PqCtB5t3/accemture.jpg">
+<img src="https://i.postimg.cc/cJvsVLs2/capgemini.jpg">
+</div>
+
+</div>
+
+</section>
+<section class="categories" id="categories">
+
+  <h2 class="section-title">Categories</h2>
+  
+  <div class="category-grid">
+  
+  <div class="category" onclick="openModal('freshers')">
+  Freshers Jobs
+  </div>
+  
+  <div class="category" onclick="openModal('walkin')">
+  Walk-In Drives
+  </div>
+  
+  <div class="category" onclick="openModal('itjobs')">
+  IT Jobs
+  </div>
+  
+  <div class="category" onclick="openModal('nonit')">
+  Non-IT Jobs
+  </div>
+  
+  <div class="category" onclick="openModal('wfh')">
+  Work From Home
+  </div>
+  
+  </div>
+  
+  </section>
+  <div id="jobModal" class="modal">
+
+    <div class="modal-content">
+    
+    <span class="close" onclick="closeModal()">&times;</span>
+    
+    <h2 id="modalTitle"></h2>
+    
+    <div id="modalLinks"></div>
+    
+    </div>
+    
+    </div>
+    <style>.modal{
+      display:none;
+      position:fixed;
+      z-index:9999;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background:rgba(241, 241, 241, 0.7);
+      }
+      
+      .modal-content{
+      background:rgb(255, 255, 255);
+      width:90%;
+      max-width:500px;
+      margin:10% auto;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      }
+      
+      .modal-content h2{
+      color:#0541c1;
+      margin-bottom:20px;
+      }
+      
+      .modal-content a{
+      display:block;
+      margin:10px 0;
+      padding:12px;
+      background:#0541c1;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      }
+      
+      .close{
+      float:right;
+      font-size:30px;
+      cursor:pointer;
+      color:red;
+      }</style>
+<script>
+
+  const categoryLinks = {
+  // ------------------------------------------------------------------------------------------------
+  // Freshers Jobs
+    // ------------------------------------------------------------------------------------------------
+  freshers: {
+  title: "Freshers Jobs",
+  links: [
+  ["Infosys Careers","https://career.infosys.com"],
+  ["TCS NextStep","https://nextstep.tcs.com"],
+  ["Wipro Careers","https://careers.wipro.com"]
+  ]
+  },
+    // ------------------------------------------------------------------------------------------------
+    // Walk-In Drives
+      // ------------------------------------------------------------------------------------------------
+  walkin: {
+  title: "Walk-In Drives",
+  links: [
+  ["Wipro Walk-In","https://www.naukri.com"],
+  ["Tech Mahindra Walk-In","https://www.naukri.com"],
+  ["Cognizant Walk-In","https://www.naukri.com"]
+  ]
+  },
+    // ------------------------------------------------------------------------------------------------
+    // IT Jobs
+      // ------------------------------------------------------------------------------------------------
+  itjobs: {
+  title: "IT Jobs",
+  links: [
+  ["Amazon Careers","https://www.amazon.jobs"],
+  ["Accenture Careers","https://www.accenture.com/in-en/careers"],
+  ["IBM Careers","https://www.ibm.com/careers"]
+  ]
+  },
+    // ------------------------------------------------------------------------------------------------
+    // NON-IT Jobs
+      // ------------------------------------------------------------------------------------------------
+  nonit: {
+  title: "Non-IT Jobs",
+  links: [
+  ["Access Healthcare","https://www.naukri.com"],
+  ["Sutherland","https://www.naukri.com"],
+  ["Genpact","https://www.naukri.com"]
+  ]
+  },
+    // ------------------------------------------------------------------------------------------------
+    // Work From Home Jobs
+      // ------------------------------------------------------------------------------------------------
+  wfh: {
+  title: "Work From Home Jobs",
+  links: [
+  ["Amazon WFH","https://www.amazon.jobs"],
+  ["Tech Support WFH","https://www.naukri.com"],
+  ["Customer Support WFH","https://www.naukri.com"]
+  ]
+  }
+  
+  };
+  
+  function openModal(category){
+  
+  const modal = document.getElementById("jobModal");
+  const title = document.getElementById("modalTitle");
+  const links = document.getElementById("modalLinks");
+  
+  title.innerText = categoryLinks[category].title;
+  
+  links.innerHTML = "";
+  
+  categoryLinks[category].links.forEach(item => {
+  
+  links.innerHTML += `
+  <a href="${item[1]}" target="_blank">
+  ${item[0]}
+  </a>
+  `;
+  
+  });
+  
+  modal.style.display = "block";
+  
+  }
+  
+  function closeModal(){
+  document.getElementById("jobModal").style.display = "none";
+  }
+  
+  window.onclick = function(event){
+  
+  const modal = document.getElementById("jobModal");
+  
+  if(event.target == modal){
+  modal.style.display = "none";
+  }
+  
+  }
+  
+  </script>
+
+<section class="quick-apply" id="apply">
+
+  <h2 class="section-title">Quick Apply Links</h2>
+  
+  <div class="company-grid">
+  
+  <a href="https://www.amazon.jobs" target="_blank">
+  Amazon Careers
+  </a>
+  
+  <a href="https://career.infosys.com" target="_blank">
+  Infosys Careers
+  </a>
+  
+  <a href="https://nextstep.tcs.com" target="_blank">
+  TCS NextStep
+  </a>
+  
+  <a href="https://www.naukri.com/job-listings-walk-in-drive-for-fresher-for-mapping-role-ll-30-may-wipro-hyderabad-0-to-0-years-290526010675?src=sortby&sid=17800472549604796_1&xp=3&px=1&nignbevent_src=jobsearchDeskGNB" target="_blank">
+  Wipro Careers
+  </a>
+  
+  <a href="https://careers.cognizant.com" target="_blank">
+  Cognizant Careers
+  </a>
+  
+  <a href="https://www.accenture.com/in-en/careers" target="_blank">
+  Accenture Careers
+  </a>
+  
+  <a href="https://www.naukri.com/tech-mahindra-jobs" target="_blank">
+  Tech Mahindra Jobs
+  </a>
+  
+  <a href="https://www.naukri.com/bosch-jobs" target="_blank">
+  Bosch Jobs
+  </a>
+  
+  </div>
+  
+  </section>
+  <script>
+    const companyLinks = {
+      amazon: "https://www.amazon.jobs",
+      infosys: "https://career.infosys.com",
+      tcs: "https://nextstep.tcs.com",
+      wipro: "https://www.naukri.com/job-listings-walk-in-drive-for-fresher-for-mapping-role-ll-30-may-wipro-hyderabad-0-to-0-years-290526010675?src=sortby&sid=17800472549604796_1&xp=3&px=1&nignbevent_src=jobsearchDeskGNB",
+      cognizant: "https://careers.cognizant.com",
+      accenture: "https://www.accenture.com/in-en/careers",
+      techmahindra: "https://www.naukri.com/tech-mahindra-jobs",
+      bosch: "https://www.naukri.com/bosch-jobs"
+    };
+    </script>
+
+<!-- <section class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search Jobs, Company, Role...">
+
+</section> -->
+
+<!-- <section class="jobs" id="jobs">
+
+<h2 class="section-title">Latest Job Updates</h2>
+
+<div class="job-grid">
+
+<div class="job-card">
+<h3>Infosys Hiring</h3>
+<p>Role: Associate Software Engineer</p>
+<p>Eligibility: B.Tech / MCA</p>
+<p>Location: Hyderabad</p>
+<button>Apply Now</button>
+</div>
+
+<div class="job-card">
+<h3>Wipro Walk-In</h3>
+<p>Role: QA Analyst</p>
+<p>Eligibility: Freshers</p>
+<p>Location: Hyderabad</p>
+<button>Apply Now</button>
+</div>
+
+<div class="job-card">
+<h3>Tech Mahindra</h3>
+<p>Role: Process Associate</p>
+<p>Eligibility: Any Graduate</p>
+<p>Location: HITEC City</p>
+<button>Apply Now</button>
+</div>
+
+</div>
+
+</section> -->
+
+
+<section class="social" id="social">
+
+<h2 class="section-title">Join Our Community</h2>
+
+<div class="social-links">
+
+<a href="https://instagram.com/freshers.job.alerts">Instagram</a>
+
+<!-- <a href="#">Telegram</a>
+
+<a href="#">WhatsApp</a> -->
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Freshers Job Alerts. All Rights Reserved.
+
+</footer>
+
+<script>
+
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".job-card");
+
+searchInput.addEventListener("keyup", function(){
+
+const value = this.value.toLowerCase();
+
+cards.forEach(card => {
+
+const text = card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(value) ? "block" : "none";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
