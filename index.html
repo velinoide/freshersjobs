@@ -415,13 +415,115 @@ opacity:0;
 }
 
 }
+/* SPLASH SCREEN */
 
+#splash{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:all 0.8s ease;
+}
+
+.splash-content{
+    text-align:center;
+}
+
+.splash-content img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin-bottom:20px;
+    animation:zoomIn 1.2s ease;
+}
+
+.splash-content h1{
+    color:white;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.splash-content p{
+    color:#cbd5e1;
+    margin-bottom:25px;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+    border:5px solid rgba(255,255,255,0.2);
+    border-top:5px solid #facc15;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:auto;
+}
+
+.hide-splash{
+    opacity:0;
+    visibility:hidden;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
 
 </style>
 </head>
 
 <body>
+<!-- Splash Screen -->
+<div id="splash">
+  <div class="splash-content">
+      <img src="https://i.postimg.cc/52gyc2ZD/Chat-GPT-Image-May-23-2026-02-06-09-PM-2.png" alt="Logo">
+      <h1 id="typing"></h1>
+      <p>Daily Walk-ins & Hiring Updates</p>
 
+      <div class="loader"></div>
+  </div>
+</div>
+<script>
+  const text = "Freshers Job Alerts";
+  let i = 0;
+  
+  function typeWriter(){
+      if(i < text.length){
+          document.getElementById("typing").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter,100);
+      }
+  }
+  
+  typeWriter();
+  </script>
+  <script>
+    window.addEventListener("load", function(){
+    
+        setTimeout(() => {
+            document.getElementById("splash")
+                    .classList.add("hide-splash");
+        }, 2500);
+    
+    });
+    </script>
 <header>
   <div class="particles">
 
