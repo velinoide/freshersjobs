@@ -485,6 +485,24 @@ opacity:0;
         opacity:1;
     }
 }
+.splash-buttons{
+    margin-top:20px;
+}
+
+.splash-buttons button{
+    background:#facc15;
+    color:#000;
+    border:none;
+    padding:12px 30px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.splash-buttons button:hover{
+    transform:scale(1.05);
+}
 
 </style>
 </head>
@@ -498,6 +516,11 @@ opacity:0;
       <p>Daily Walk-ins & Hiring Updates</p>
 
       <div class="loader"></div>
+      <div class="splash-buttons">
+        <button onclick="proceedSite()">
+            OK Proceed
+        </button>
+    </div>
   </div>
 </div>
 <script>
@@ -514,7 +537,7 @@ opacity:0;
   
   typeWriter();
   </script>
-  <script>
+  <!-- <script>
     window.addEventListener("load", function(){
     
         setTimeout(() => {
@@ -523,7 +546,7 @@ opacity:0;
         }, 2500);
     
     });
-    </script>
+    </script> -->
 <header>
   <div class="particles">
 
@@ -777,7 +800,44 @@ IT and Non-IT jobs from top companies across India.
       cursor:pointer;
       color:red;
       }</style>
+      <script>
+       function proceedSite(){
+
+const btn = document.querySelector(".splash-buttons button");
+
+btn.innerHTML = "Opening...";
+btn.disabled = true;
+
+document.getElementById("splash")
+        .classList.add("hide-splash");
+
+fetch(
+  "https://script.google.com/macros/s/AKfycbwXMyYxr5MpWIWekFEzFOdg2l7jDpvpuRdSTPUcEByGGBEMytqYm0gJeIWFq4LGuMgtgw/exec",
+  {
+    method:"POST",
+    mode:"no-cors"
+  }
+).catch(() => {});
+}
+        </script>
+        <style>.splash-buttons button{
+          background:rgb(17, 101, 190);
+          color:rgb(240, 237, 237);
+          border:none;
+          padding:12px 30px;
+          border-radius:10px;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+          transition:0.3s;
+      }
+      
+      .splash-buttons button:active{
+          transform:scale(0.95);
+      }</style>
 <script>
+
+  
 
   const categoryLinks = {
   // ------------------------------------------------------------------------------------------------
@@ -1074,4 +1134,4 @@ text.includes(value) ? "block" : "none";
 </script>
 
 </body>
-</html>
+</html> see this 
