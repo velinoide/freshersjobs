@@ -352,52 +352,6 @@ overflow:hidden;
 pointer-events:none;
 z-index:-1;
 }
-
-/* .particles span{
-position:absolute;
-display:block;
-width:25px;
-height:25px;
-background:rgba(198, 200, 235, 0.883);
-border-radius:50%;
-animation:float 15s linear infinite;
-}
-
-.particles span:nth-child(1){
-left:10%;
-animation-duration:15s;
-}
-
-.particles span:nth-child(2){
-left:20%;
-animation-duration:20s;
-}
-
-.particles span:nth-child(3){
-left:35%;
-animation-duration:17s;
-}
-
-.particles span:nth-child(4){
-left:50%;
-animation-duration:22s;
-}
-
-.particles span:nth-child(5){
-left:65%;
-animation-duration:18s;
-}
-
-.particles span:nth-child(6){
-left:80%;
-animation-duration:24s;
-}
-
-.particles span:nth-child(7){
-left:90%;
-animation-duration:16s;
-} */
-
 @keyframes float{
 
 0%{
@@ -515,7 +469,7 @@ opacity:0;
       <h1 id="typing"></h1>
       <p>Daily Walk-ins & Hiring Updates</p>
 
-      <div class="loader"></div>
+      <!-- <div class="loader"></div> -->
       <div class="splash-buttons">
         <button onclick="proceedSite()">
             OK Proceed
@@ -624,24 +578,13 @@ IT and Non-IT jobs from top companies across India.
      target="_blank">
      Follow Instagram
   </a>
-
-  
-  
-  <!-- <a href="YOUR_TELEGRAM_LINK"
-     target="_blank">
-     📢 Join Telegram
-  </a> -->
-  
-  <!-- <a href="YOUR_WHATSAPP_LINK"
-     target="_blank">
-     💬 Join WhatsApp
-  </a> -->
   
   </div>
   <section>
     <span></span>
     <br>
-<p> Current job openings in hyderabad</p>
+<p> Current job openings in hyderabad </p>
+<p>          Applicaion Links </p>
     <div class="social-links">
       <a href="https://www.naukri.com/job-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041?src=jobsearchDesk&sid=1780063327896398_6&xp=2&px=1" target="_blank">
         Tech-M
@@ -653,17 +596,21 @@ IT and Non-IT jobs from top companies across India.
           <a href="https://www.naukri.com/job-listings-walk-in-drive-for-customer-support-role-international-voice-process-accenture-hyderabad-1-to-6-years-010626004938?src=sortby&sid=1780307116928918_1&xp=14&px=1&nignbevent_src=jobsearchDeskGNB" target="_blank">
             Accenture
             </a>
-
-            <a href="https://www.naukri.com/job-listings-walkin-interview-for-content-writer-3rd-to-5th-june-wipro-hyderabad-0-to-1-years-100226036492?src=sortby&sid=1780307116928918_2&xp=16&px=2&nignbevent_src=jobsearchDeskGNB" target="_blank">
+           <a href="https://www.naukri.com/job-listings-walkin-interview-for-content-writer-3rd-to-5th-june-wipro-hyderabad-0-to-1-years-100226036492?src=sortby&sid=1780307116928918_2&xp=16&px=2&nignbevent_src=jobsearchDeskGNB" target="_blank">
               Wipro
               </a>
-
               <a href="https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470?utm_source=commonjobs&utm_medium=referral&utm_campaign=job_listing" target="_blank">
                 Deloitte
                 </a>
                 <a href="https://www.naukri.com/job-listings-international-voice-process-only-freshers-sagility-india-hyderabad-0-to-1-years-010626005033?src=jobsearchDesk&sid=1780307116928918_8&xp=1&px=2" target="_blank">
                   Sagility
                   </a>
+                  <a href="https://www.naukri.com/job-listings-walk-in-international-chat-process-bulk-hiring-intouchcx-hyderabad-0-to-3-years-010626029623?src=sortby&sid=17803968094269373_3&xp=2&px=3&nignbevent_src=jobsearchDeskGNB">
+                    INTOUCHCX
+                    </a>
+                    <a href="https://www.naukri.com/job-listings-customer-service-voice-hyderabad-genpact-karimnagar-khammam-hyderabad-0-to-3-years-020626012768?src=sortby&sid=17803968094269373_1&xp=14&px=1&nignbevent_src=jobsearchDeskGNB" target="_blank">
+                      Genpact
+                      </a>
     </div>
   </section>
   </section>
@@ -722,21 +669,11 @@ IT and Non-IT jobs from top companies across India.
   
   <div class="category-grid">
   
-  <!-- <div class="category" onclick="openModal('freshers')">
-  Freshers Jobs
-  </div> -->
   
   <div class="category" onclick="openModal('walkin')">
   Walk-In Drives
   </div>
-  
-  <!-- <div class="category" onclick="openModal('itjobs')">
-  IT Jobs
-  </div>
-  
-  <div class="category" onclick="openModal('nonit')">
-  Non-IT Jobs
-  </div> -->
+
   
   <div class="category" onclick="openModal('wfh')">
   Work From Home
@@ -821,7 +758,7 @@ fetch(
 }
         </script>
         <style>.splash-buttons button{
-          background:rgb(17, 101, 190);
+          background:rgb(42, 104, 191);
           color:rgb(240, 237, 237);
           border:none;
           padding:12px 30px;
@@ -836,9 +773,6 @@ fetch(
           transform:scale(0.95);
       }</style>
 <script>
-
-  
-
   const categoryLinks = {
   // ------------------------------------------------------------------------------------------------
   // Freshers Jobs
@@ -857,7 +791,7 @@ fetch(
   walkin: {
   title: "Walk-In Drives",
   links: [
-  ["Wipro Walk-In","https://www.naukri.com"],
+  // ["Wipro Walk-In","https://www.naukri.com"],
   ["Tech Mahindra Walk-In","https://l.instagram.com/?u=https%3A%2F%2Fwww.naukri.com%2Fjob-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041%3Fsrc%3DjobsearchDesk%26sid%3D1780063327896398_6%26xp%3D2%26px%3D1%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn203MZp0tRTMwe5qbhXfATCdRwqr4gv1J_OTnyObxcHLvZtauPhGINu3xVZ0_aem_zFhnoHDRBTE9iH5x6L-KHw&e=AUDio7wXjlRQT5JJtTyUmw_Cq1c--q7agvhiVoz_xG0Jy-fYhLSIs358B8g3BV7eUjcZ9ojrdrEyQOP7yILnodaybZXqdBUS3zo3ThR7bhBZwTTBT8SyCZe1mcHezkLAKHYZ-7DHQwx3ZpXCCQwHbMZCx5Az"],
   ["Cognizant Walk-In","https://www.naukri.com"],
   ["Sagility Walk-In","https://www.naukri.com/job-listings-international-voice-process-only-freshers-sagility-india-hyderabad-0-to-1-years-010626005033?src=jobsearchDesk&sid=1780307116928918_8&xp=1&px=2"],
@@ -865,29 +799,7 @@ fetch(
   ["Wipro Walk-In","https://www.naukri.com/job-listings-walkin-interview-for-content-writer-3rd-to-5th-june-wipro-hyderabad-0-to-1-years-100226036492?src=sortby&sid=1780307116928918_2&xp=16&px=2&nignbevent_src=jobsearchDeskGNB"],
   ["Deloitte Walk-In","https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470?utm_source=commonjobs&utm_medium=referral&utm_campaign=job_listing"]
   ]
-  },
-    // ------------------------------------------------------------------------------------------------
-    // IT Jobs
-      // ------------------------------------------------------------------------------------------------
-  // itjobs: {
-  // title: "IT Jobs",
-  // links: [
-  // ["Amazon Careers","https://www.amazon.jobs"],
-  // ["Accenture Careers","https://www.accenture.com/in-en/careers"],
-  // ["IBM Careers","https://www.ibm.com/careers"]
-  // ]
-  // },
-    // ------------------------------------------------------------------------------------------------
-    // NON-IT Jobs
-      // ------------------------------------------------------------------------------------------------
-  // nonit: {
-  // title: "Non-IT Jobs",
-  // links: [
-  // ["Access Healthcare","https://www.naukri.com"],
-  // ["Sutherland","https://www.naukri.com"],
-  // ["Genpact","https://www.naukri.com"]
-  // ]
-  // },
+  }, 
     // ------------------------------------------------------------------------------------------------
     // Work From Home Jobs
       // ------------------------------------------------------------------------------------------------
@@ -899,7 +811,6 @@ fetch(
   ["Customer Support WFH","https://www.naukri.com"]
   ]
   }
-  
   };
   
   function openModal(category){
@@ -932,14 +843,11 @@ fetch(
   
   window.onclick = function(event){
   
-  const modal = document.getElementById("jobModal");
-  
+  const modal = document.getElementById("jobModal"); 
   if(event.target == modal){
   modal.style.display = "none";
+  } 
   }
-  
-  }
-  
   </script>
 
 <section class="quick-apply" id="apply">
@@ -1047,48 +955,6 @@ fetch(
       deloitte: "https://www.deloitte.com/global/en/careers.html"
     };
     </script>
-
-<!-- <section class="search-box">
-
-<input type="text" id="searchInput" placeholder="Search Jobs, Company, Role...">
-
-</section> -->
-
-<!-- <section class="jobs" id="jobs">
-
-<h2 class="section-title">Latest Job Updates</h2>
-
-<div class="job-grid">
-
-<div class="job-card">
-<h3>Infosys Hiring</h3>
-<p>Role: Associate Software Engineer</p>
-<p>Eligibility: B.Tech / MCA</p>
-<p>Location: Hyderabad</p>
-<button>Apply Now</button>
-</div>
-
-<div class="job-card">
-<h3>Wipro Walk-In</h3>
-<p>Role: QA Analyst</p>
-<p>Eligibility: Freshers</p>
-<p>Location: Hyderabad</p>
-<button>Apply Now</button>
-</div>
-
-<div class="job-card">
-<h3>Tech Mahindra</h3>
-<p>Role: Process Associate</p>
-<p>Eligibility: Any Graduate</p>
-<p>Location: HITEC City</p>
-<button>Apply Now</button>
-</div>
-
-</div>
-
-</section> -->
-
-
 <section class="social" id="social">
 
 <h2 class="section-title">Join Our Community</h2>
@@ -1096,10 +962,6 @@ fetch(
 <div class="social-links">
 
 <a href="https://instagram.com/freshers.job.alerts">Instagram</a>
-
-<!-- <a href="#">Telegram</a>
-
-<a href="#">WhatsApp</a> -->
 
 </div>
 
@@ -1110,28 +972,18 @@ fetch(
 © 2026 Freshers Job Alerts. All Rights Reserved.
 
 </footer>
-
 <script>
-
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".job-card");
 
 searchInput.addEventListener("keyup", function(){
-
 const value = this.value.toLowerCase();
-
 cards.forEach(card => {
-
 const text = card.innerText.toLowerCase();
-
 card.style.display =
 text.includes(value) ? "block" : "none";
-
 });
-
 });
-
 </script>
-
 </body>
-</html> see this 
+</html>
