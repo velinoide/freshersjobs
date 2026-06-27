@@ -2,1811 +2,1049 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Velino TypeX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Freshers Job Alerts | Jobs, Walk-ins & Hiring Updates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --bg-top:#0d67c8;
-    --bg-bottom:#07427c;
-    --bg-top1:#0d67c8;
-    
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Arial;
-background:#0d67c8;
-color:white;
-transition:0.3s;
+    background:#ffffff;
+    color:#e6e9f0;
+    overflow-x:hidden;
 }
+/* HEADER */
 
-/* LIGHT THEME */
-body.light{
-background:#f4f4f4 ;
-color:#111;
-}
-
-body.light .topbar{
-background:#e2e8f0;
-}
-
-body.light .box{
-background:#ffffff;
-color:#111;
-}
-
-body.light button,
-body.light select{
-background:#2563eb;
-color:white;
-}
-
-/* CONTAINER */
-/* CONTAINER */ .container{ max-width:900px; margin:auto; padding:20px; text-align:center; }
-/* TOPBAR */
-.topbar{
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:black;
+padding:15px 8%;
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:15px 20px;
-margin-bottom:20px;
-background:rgba(40,48,67,0.9);
-border-radius:12px;
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.08);
-transition:0.3s;
-width:100%;
-box-sizing:border-box;
-}
-
-body.light .topbar{
-background:rgba(205, 204, 204, 0.8);
-border:1px solid rgba(0,0,0,0.08);
-}
-
-.left-controls{
-display:flex;
-gap:12px;
 align-items:center;
-flex-wrap:wrap;
+border-bottom:1px solid #edf0f4;
 }
 
-.stats{
+.logo{
 display:flex;
-gap:12px;
+align-items:center;
+gap:15px;
+}
+
+.logo-icon{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#fafafa;
+color:#000;
+font-size:28px;
+font-weight:bold;
+display:flex;
 align-items:center;
 justify-content:center;
-flex-wrap:wrap;
-}
-.container{
-width:95%;
-max-width:1800px;
-margin:auto;
-padding:20px;
 }
 
-button, select{
-padding:8px 12px;
+.logo-text h1{
+font-size:24px;
+color:#f7f6f3;
+}
+
+.logo-text p{
+font-size:12px;
+color:#cbd5e1;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+nav a:hover{
+color:#facc15;
+}
+
+/* HERO */
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(135deg,#638fe6,#022d97);
+}
+
+.hero h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.hero-buttons{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn-primary{
+background:#ffffff;
+color:black;
+}
+
+.btn-secondary{
+border:2px solid #facc15;
+color:#facc15;
+}
+
+/* LOGO SLIDER */
+
+.slider-section{
+padding:60px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:36px;
+color:#fafafa;
+margin-bottom:30px;
+}
+
+.slider{
+overflow:hidden;
+background:white;
+padding:20px 0;
+}
+
+.slide-track{
+display:flex;
+width:calc(220px * 20);
+animation:scroll 35s linear infinite;
+}
+
+.slide-track img{
+width:180px;
+height:80px;
+object-fit:contain;
+margin:0 20px;
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(calc(-220px * 10));
+}
+}
+
+/* QUICK APPLY */
+
+.quick-apply{
+padding:70px 8%;
+}
+
+.company-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.company-grid a{
+background:#20335b;
+color:rgb(249, 248, 248);
+padding:18px;
+text-align:center;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.company-grid a:hover{
+transform:translateY(-4px);
+}
+
+/* SEARCH */
+
+.search-box{
+padding:40px 8%;
+}
+
+.search-box input{
+width:100%;
+padding:16px;
 border:none;
 border-radius:10px;
-background:#2563eb;
-color:white;
+font-size:16px;
+}
+
+/* JOBS */
+
+.jobs{
+padding:60px 8%;
+}
+
+.job-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.job-card{
+background:#111827;
+padding:25px;
+border-radius:15px;
+border:1px solid #1f2937;
+transition:0.3s;
+}
+
+.job-card:hover{
+transform:translateY(-5px);
+border-color:#fafafa;
+}
+
+.job-card h3{
+margin-bottom:15px;
+color:#ffffff;
+}
+
+.job-card p{
+margin-bottom:8px;
+color:#eceef0;
+}
+
+.job-card button{
+margin-top:15px;
+background:#ffffff;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+font-weight:bold;
 cursor:pointer;
 }
 
-.stats{
-display:flex;
-gap:10px;
+/* CATEGORIES */
+
+.categories{
+padding:60px 8%;
 }
 
-.box{
-background:rgba(74, 89, 108, 0.7);
-padding:8px 12px;
-border-radius:10px;
-min-width:70px;
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.category{
+background:#20335b;
+padding:25px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+}
+
+/* SOCIAL */
+
+.social{
+padding:60px 8%;
 text-align:center;
 }
 
-.label{
-font-size:10px;
-opacity:0.6;
-display:block;
-}
-
-/* TEXT */
-#text{
-font-size:26px;
-line-height:2.5;
-
-margin-top:1px;
-}
-
-.char{display:inline-block;}
-.space{min-width:21px;}
-.correct{color:#22c55e;}
-.wrong{color:#ef4444;}
-.current{
-background:#2284c5;
-color:white;
-border-radius:4px;
-padding:2px 4px;
-}
-
-/* SWITCH */
-.switch{
-position:relative;
-display:inline-block;
-width:46px;
-height:24px;
-}
-
-.switch input{display:none;}
-
-.slider{
-position:absolute;
-cursor:pointer;
-top:0;left:0;right:0;bottom:0;
-background:#555;
-border-radius:34px;
-transition:0.3s;
-}
-
-.slider:before{
-position:absolute;
-content:"";
-height:18px;
-width:18px;
-left:3px;
-bottom:3px;
-background:white;
-border-radius:50%;
-transition:0.3s;
-}
-
-input:checked + .slider{background:#22c55e;}
-input:checked + .slider:before{transform:translateX(22px);}
-
-.switch-group{
+.social-links{
 display:flex;
-align-items:center;
-gap:6px;
-font-size:12px;
-}
-
-/* ================= SPLASH SCREEN ================= */
-
-#splash-screen{
-position:fixed;
-inset:0;
-display:flex;
-flex-direction:column;
 justify-content:center;
-align-items:center;
-background: radial-gradient(circle at top, #111, #000);
-z-index:999999;
-transition:opacity .8s ease;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
-.splash-line{
-    width:800px;
-    height:1px;
-
-    margin:20px 0;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(12, 110, 180, 0.8),
-        transparent
-    );
-
-    animation:lineGlow 2s ease-in-out infinite;
-}
-.apple-logo-text{
-    color:#ffffff;
-}
-/* Light Theme Logo */
-body.light .apple-logo-text{
-    color:#2563eb;   /* Blue */
-}
-.apple-logo-text{
-    font-size:3rem;
-    font-weight:100;
-    letter-spacing:8px;
-
-    color:white;
-
-    text-align:center;
-text-shadow:0 0 20px rgba(0,195,255,0.3);
+.social-links a{
+background:#0c0573e5;
+padding:15px 25px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+color:rgb(255, 255, 255);
 }
 
-.splash-tagline{
-    margin-top:20px;
+/* FOOTER */
 
-color:rgba(255, 255, 255, 0.7);
-
-letter-spacing:3px;
-
-font-size:14px;
-}
-#splash-screen {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background: #000;
-    z-index: 999999;
-
-    opacity: 1;
-    transition: opacity 0.8s ease;
+footer{
+margin-top:50px;
+padding:25px;
+text-align:center;
+background:#111827;
+color:#94a3b8;
 }
 
-@keyframes lineGlow{
-0%,100%{opacity:.3; transform:scaleX(0.9);}
-50%{opacity:1; transform:scaleX(1);}
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
 }
 
-#splash-screen.fade-out{
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
+/* ANIMATED BACKGROUND */
+
+body{
+    background: url("https://i.postimg.cc/P5Bt8HX5/068843c35c7dfc2fc1034733f2f6c2ab.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden;
+}
+.particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+z-index:-1;
+}
+@keyframes float{
+
+0%{
+transform:translateY(100vh) scale(0);
 opacity:0;
 }
 
-@media(max-width:768px){
-.splash-line{width:200px;}
-.apple-logo-text{font-size:1.8rem;}
-.splash-tagline{font-size:12px;}
-}
-.main-title{
-text-align:center;
-font-size:30px;
-font-weight:800;
-letter-spacing:3px;
-margin:20px 0 10px 0;
-color:#00c3ff;
-text-shadow:0 0 10px rgba(0,195,255,0.4);
-animation: glowText 2s infinite ease-in-out;
-}
-
-/* Glow Animation */
-@keyframes glowText{
-0%{
-text-shadow:0 0 5px rgba(0,195,255,0.3),
-0 0 10px rgba(0,195,255,0.2);
-transform:scale(1);
-}
-
-50%{
-text-shadow:0 0 15px rgba(0,195,255,0.8),
-0 0 30px rgba(0,195,255,0.6),
-0 0 40px rgba(0,195,255,0.4);
-transform:scale(1.03);
+20%{
+opacity:1;
 }
 
 100%{
-text-shadow:0 0 5px rgba(0,195,255,0.3),
-0 0 10px rgba(0,195,255,0.2);
-transform:scale(1);
-}
+transform:translateY(-100px) scale(1.5);
+opacity:0;
 }
 
-/* LIGHT THEME SUPPORT */
-body.light .main-title{
-color:#2563eb;
-animation: glowTextLight 2s infinite ease-in-out;
 }
+/* SPLASH SCREEN */
 
-@keyframes glowTextLight{
-0%{
-text-shadow:0 0 5px rgba(37,99,235,0.2);
-transform:scale(1);
-}
-
-50%{
-text-shadow:0 0 20px rgba(37,99,235,0.6),
-0 0 35px rgba(37,99,235,0.4);
-transform:scale(1.03);
-}
-
-100%{
-text-shadow:0 0 5px rgba(37,99,235,0.2);
-transform:scale(1);
-}
-}
-/* =========================
-   RESULT MODAL - DARK MODE
-========================= */
-.result-modal{
+#splash{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    height:100%;
-    background:rgba(0,0,0,.8);
-    display:none;
+    height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    display:flex;
     justify-content:center;
     align-items:center;
     z-index:99999;
+    transition:all 0.8s ease;
 }
 
-.result-box{
-    background:#1e293b;
-    padding:30px;
-    border-radius:15px;
+.splash-content{
     text-align:center;
-    min-width:350px;
-    color:#fff;
-    box-shadow:0 0 25px rgba(0,195,255,.25);
 }
 
-.result-box h2{
-    margin-top:0;
-    color:#60a5fa;
-}
-
-.result-box p{
-    color:#cbd5e1;
-}
-
-.result-box button{
-    margin:8px;
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#2563eb;
-    color:white;
-    transition:.3s;
-}
-
-.result-box button:hover{
-    transform:translateY(-2px);
-    background:#1d4ed8;
-}
-
-
-/* =========================
-   RESULT MODAL - LIGHT MODE
-========================= */
-body.light .result-modal{
-    background:rgba(255,255,255,.75);
-}
-
-body.light .result-box{
-    background:#ffffff;
-    color:#111827;
-    box-shadow:0 0 25px rgba(0,0,0,.15);
-    border:1px solid #e5e7eb;
-}
-
-body.light .result-box h2{
-    color:#2563eb;
-}
-
-body.light .result-box p{
-    color:#374151;
-}
-
-body.light .result-box button{
-    background:#2563eb;
-    color:#fff;
-}
-
-body.light .result-box button:hover{
-    background:#1d4ed8;
-}
-
-.logo{
-width:270px;
-height:auto;
-
-}
-/* PREMIUM LOGIN SCREEN */
-
-.login-screen{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:linear-gradient(to bottom,var(--bg-top),var(--bg-bottom));
-    overflow:hidden;
-    z-index:9999;
-}
-
-/* Floating Glow */
-.login-screen::before{
-    content:"";
-    position:absolute;
-    width:400px;
-    height:400px;
+.splash-content img{
+    width:120px;
+    height:120px;
     border-radius:50%;
-    background:rgba(0,195,255,.15);
-    filter:blur(100px);
-    animation:floatGlow 8s ease-in-out infinite;
+    margin-bottom:20px;
+    animation:zoomIn 1.2s ease;
 }
 
-@keyframes floatGlow{
-    0%,100%{
-        transform:translate(-100px,-50px);
-    }
-    50%{
-        transform:translate(100px,50px);
-    }
+.splash-content h1{
+    color:white;
+    font-size:38px;
+    margin-bottom:10px;
 }
 
-.login-box{
-    position:relative;
-
-    width:420px;
-    padding:40px;
-
-    border-radius:24px;
-
-    background:rgba(30,41,59,.65);
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-    0 8px 32px rgba(0,0,0,.4),
-    0 0 25px rgba(0,195,255,.15);
-
-    animation:cardFade .8s ease;
-}
-
-@keyframes cardFade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.login-box h2{
-    margin:0 0 8px;
-    font-size:32px;
-    letter-spacing:2px;
-
-    color:#f0f3f4;
-
-    /* text-shadow:
-    0 0 10px rgba(0,195,255,.5); */
-}
-
-.login-box p.subtitle{
-    color:#94a3b8;
-    font-size:14px;
+.splash-content p{
+    color:#cbd5e1;
     margin-bottom:25px;
 }
 
-.login-box input{
-    width:100%;
-    box-sizing:border-box;
-
-    padding:14px 16px;
-    margin:10px 0;
-
-    border:none;
-    outline:none;
-
-    border-radius:12px;
-
-    background:rgba(255,255,255,.06);
-
-    color:white;
-    font-size:15px;
-
-    transition:.3s;
+.loader{
+    width:60px;
+    height:60px;
+    border:5px solid rgba(255,255,255,0.2);
+    border-top:5px solid #facc15;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:auto;
 }
 
-.login-box input:focus{
-    background:rgba(255,255,255,.1);
-
-    box-shadow:
-    0 0 0 2px rgba(0,195,255,.4);
-}
-
-.login-box input::placeholder{
-    color:#94a3b8;
-}
-
-.login-box button{
-    width:100%;
-    padding:14px;
-
-    margin-top:12px;
-
-    border:none;
-    border-radius:12px;
-
-    font-size:15px;
-    font-weight:600;
-
-    cursor:pointer;
-
-    background:linear-gradient(
-        135deg,
-        #00c3ff,
-        #2563eb
-    );
-
-    color:white;
-
-    transition:.3s;
-}
-
-.login-box button:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 10px 25px rgba(0,195,255,.35);
-}
-
-.login-box button:active{
-    transform:scale(.98);
-}
-
-#loginError{
-    margin-top:15px;
-    font-size:14px;
-    color:#ef4444;
-}
-
-body.light 
-.login-screen{
-    background:linear-gradient(to bottom,var(--bg-top),var(--bg-bottom));
-}
-
-body.light .login-box{
-    background:rgba(255,255,255,.8);
-    color:#111827;
-    border:1px solid rgba(0,0,0,.08);
-}
-
-body.light .login-box input{
-    background:rgba(0,0,0,.05);
-    color:#111827;
-}
-
-body.light .login-box input::placeholder{
-    color:#6b7280;
-}
-
-/* Light Theme */
-
-body.light .login-screen{
-background:#f4f4f4;
-}
-
-body.light .login-box{
-background:white;
-color:#111;
-}
-#userBox{
-    min-width:120px;
-}
-
-#currentUser{
-    font-size:14px;
-    color:#00c3ff;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-body.light #currentUser{
-    color:#2563eb;
-}
-.login-hint{
-    margin-top:20px;
-    padding:12px;
-
-    border-radius:10px;
-
-    background:rgba(0,195,255,.08);
-
-    border:1px solid rgba(0,195,255,.2);
-
-    color:#cbd5e1;
-    font-size:13px;
-    line-height:1.6;
-}
-
-.login-hint strong{
-    color:#00c3ff;
-}
-
-body.light .login-hint{
-    background:rgba(37,99,235,.08);
-    border:1px solid rgba(37,99,235,.15);
-    color:#374151;
-}
-
-body.light .login-hint strong{
-    color:#2563eb;
-}
-#splash-screen{
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:radial-gradient(circle at top,#111,#000);
-z-index:99999999;
-opacity:1;
-}
-.demo-btn{
-    position:relative;
-    overflow:hidden;
-
-    width:100%;
-    margin-top:15px;
-    padding:14px;
-
-    border:none;
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-size:15px;
-    font-weight:600;
-    color:#fff;
-
-    background:linear-gradient(
-        135deg,
-        #22c55e,
-        #16a34a,
-        #22c55e
-    );
-    background-size:250% 250%;
-
-    animation:gradientMove 4s ease infinite;
-
-    transition:
-        transform .3s,
-        box-shadow .3s;
-}
-
-/* Moving Shine */
-.demo-btn::before{
-    content:"";
-
-    position:absolute;
-    top:0;
-    left:-120%;
-
-    width:60%;
-    height:100%;
-
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.55),
-        transparent
-    );
-
-    transform:skewX(-25deg);
-
-    animation:shine 3s infinite;
-}
-
-/* Glow Ring */
-.demo-btn::after{
-    content:"";
-
-    position:absolute;
-    inset:-2px;
-
-    border-radius:14px;
-
-    border:2px solid rgba(34,197,94,.35);
-
-    opacity:0;
-
-    transition:.35s;
-}
-
-.demo-btn:hover{
-    transform:translateY(-4px) scale(1.03);
-
-    box-shadow:
-        0 12px 30px rgba(34,197,94,.35),
-        0 0 25px rgba(34,197,94,.25);
-}
-
-.demo-btn:hover::after{
-    opacity:1;
-}
-
-.demo-btn:active{
-    transform:scale(.97);
-}
-
-@keyframes gradientMove{
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-@keyframes shine{
-    0%{
-        left:-120%;
-    }
-
-    100%{
-        left:170%;
-    }
-}
-
-/* Light Theme */
-
-body.light .demo-btn{
-    background:linear-gradient(
-        135deg,
-        #22c55e,
-        #16a34a,
-        #22c55e
-    );
-}
-/* ================= SPLASH SCREEN ================= */
-
-#splash-screen{
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    background:linear-gradient(to bottom,#0d67c8,#07427c);
-    /* background:black; */
-
-    z-index:999999;
-
-    opacity:1;
-    transition:opacity .8s ease;
-}
-
-#splash-screen.fade-out{
-    opacity:0;
-    pointer-events:none;
-}
-
-/* ================= GLOW LINES ================= */
-
-.splash-line{
-    width:min(1000px,90vw);
-    height:2px;
-
-    margin:20px 0;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgb(255, 255, 255),
-        transparent
-    );
-
-    animation:lineGlow 2s ease-in-out infinite;
-}
-
-@keyframes lineGlow{
-
-    0%,100%{
-        opacity:.3;
-        transform:scaleX(.9);
-    }
-
-    50%{
-        opacity:1;
-        transform:scaleX(1);
-    }
-}
-
-/* ================= LOGO ================= */
-
-.apple-logo-text{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-
-    font-size:clamp(1.8rem,8vw,4rem);
-
-    font-weight:100;
-
-    letter-spacing:clamp(4px,.8vw,12px);
-
-    color:#fff;
-
-    text-align:center;
-
-    /* text-shadow:
-    0 0 10px rgba(0,195,255,.3),
-    0 0 20px rgba(0,195,255,.2); */
-
-    perspective:1000px;
-
-    /* animation:logoGlow 3s ease-in-out infinite; */
-}
-
-.apple-logo-text span{
-    display:inline-block;
-    opacity:0;
-    transform:rotateY(90deg);
-    animation:letterRotate .9s ease forwards;
-}
-
-.apple-logo-text span:nth-child(1){animation-delay:.1s;}
-.apple-logo-text span:nth-child(2){animation-delay:.2s;}
-.apple-logo-text span:nth-child(3){animation-delay:.3s;}
-.apple-logo-text span:nth-child(4){animation-delay:.4s;}
-.apple-logo-text span:nth-child(5){animation-delay:.5s;}
-.apple-logo-text span:nth-child(6){animation-delay:.6s;}
-.apple-logo-text span:nth-child(7){animation-delay:.7s;}
-.apple-logo-text span:nth-child(8){animation-delay:.8s;}
-.apple-logo-text span:nth-child(9){animation-delay:.9s;}
-.apple-logo-text span:nth-child(10){animation-delay:1s;}
-.apple-logo-text span:nth-child(11){animation-delay:1.1s;}
-.apple-logo-text span:nth-child(12){animation-delay:1.2s;}
-.apple-logo-text span:nth-child(13){animation-delay:1.3s;}
-.apple-logo-text span:nth-child(14){animation-delay:1.4s;}
-.apple-logo-text span:nth-child(15){animation-delay:1.5s;}
-.apple-logo-text span:nth-child(16){animation-delay:1.6s;}
-
-@keyframes letterRotate{
-
-    from{
-        opacity:0;
-        transform:rotateY(90deg);
-    }
-
-    to{
-        opacity:1;
-        transform:rotateY(0deg);
-    }
-}
-
-@keyframes logoGlow{
-
-    0%,100%{
-        text-shadow:
-        0 0 10px rgba(0,195,255,.3),
-        0 0 20px rgba(0,195,255,.2);
-    }
-
-    50%{
-        text-shadow:
-        0 0 20px rgba(0,195,255,.8),
-        0 0 40px rgba(0,195,255,.5),
-        0 0 60px rgba(0,195,255,.3);
-    }
-}
-
-/* ================= TAGLINE ================= */
-
-.splash-tagline{
-
-    margin-top:20px;
-
-    color:rgb(255, 255, 255);
-
-    letter-spacing:4px;
-
-    font-size:14px;
-
-    text-transform:uppercase;
-
-    animation:fadeUp 2s ease;
-}
-
-/* ================= CREDIT ================= */
-
-.developer-credit{
-
-    margin-top:35px;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    color:rgb(255, 255, 255);
-
-    animation:fadeUp 2.5s ease;
-}
-
-/* CURSOR */ .current{ background:#2284c5; color:white; border-radius:4px; padding:2px 4px; line-height:1; }
-
-/* ================= WELCOME SCREEN ================= */
-
-#welcomeScreen{
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:linear-gradient(
-        to bottom,
-        var(--bg-top),
-        var(--bg-bottom)
-    );
-
-    z-index:999999;
-
+.hide-splash{
     opacity:0;
     visibility:hidden;
-
-    transition:opacity .8s ease;
 }
 
-#welcomeScreen.show{
-    opacity:1;
-    visibility:visible;
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
 }
 
-/* Welcome text stays exactly center */
-
-#welcomeScreen h1{
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    margin:0;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    font-size:56px;
-    font-weight:200;
-
-    letter-spacing:2px;
-
-    color:#fff;
+@keyframes zoomIn{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+.splash-buttons{
+    margin-top:20px;
 }
 
-/* Logo above text */
-
-.ms-logo{
-    position:absolute;
-
-    top:calc(50% - 150px);
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:90px;
-    height:90px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-    gap:6px;
+.splash-buttons button{
+    background:#facc15;
+    color:#000;
+    border:none;
+    padding:12px 30px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
 }
 
-/* ================= MICROSOFT LOGO ================= */
-
-.ms-logo{
-    width:90px;
-    height:90px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-    gap:6px;
-
-    margin-bottom:30px;
+.splash-buttons button:hover{
+    transform:scale(1.05);
 }
 
-.ms-logo div{
-    width:42px;
-    height:42px;
-}
-
-.red{
-    background:#f25022;
-}
-
-.green{
-    background:#7fba00;
-}
-
-.blue{
-    background:#00a4ef;
-}
-
-.yellow{
-    background:#ffb900;
-}
-
-/* ================= WELCOME TEXT ================= */
-
-#welcomeScreen h1{
-
-    margin:0;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    font-size:56px;
-
-    font-weight:200;
-
-    letter-spacing:2px;
-
-    color:#ffffff;
-
-    text-align:center;
-}
 </style>
 </head>
 
 <body>
+<!-- Splash Screen -->
+<div id="splash">
+  <div class="splash-content">
+      <img src="https://i.postimg.cc/52gyc2ZD/Chat-GPT-Image-May-23-2026-02-06-09-PM-2.png" alt="Logo">
+      <h1 id="typing"></h1>
+      <p>Daily Walk-ins & Hiring Updates</p>
 
-<!-- SPLASH -->
-
-  <!-- ================= SPLASH ================= -->
-
-<div id="splash-screen">
-
-
-    <div class="splash-line"></div>
-    
-    <div class="apple-logo-text">
-    
-        <span>V</span>
-        <span>E</span>
-        <span>L</span>
-        <span>I</span>
-        <span>N</span>
-        <span>O</span>
-        <span>&nbsp;</span>
-        <span>E</span>
-        <span>C</span>
-        <span>O</span>
-        <span>S</span>
-        <span>Y</span>
-        <span>S</span>
-        <span>T</span>
-        <span>E</span>
-        <span>M</span>
-    
+      <!-- <div class="loader"></div> -->
+      <div class="splash-buttons">
+        <button onclick="proceedSite()">
+            OK Proceed
+        </button>
     </div>
-    
-    <div class="splash-line"></div>
-    <br>
-    <br>
-    <br>
-    <div class="splash-tagline">
-        Full Stack Developer • AI Enthusiast • Innovator
-    </div>
-    
-    <div class="developer-credit">
-        Developed by Shiva Velishoju
-    </div>
-    
-    
-    </div>
-    <div id="welcomeScreen">
-
-        <div class="ms-logo">
-            <div class="red"></div>
-            <div class="green"></div>
-            <div class="blue"></div>
-            <div class="yellow"></div>
-        </div>
-      
-        <h1>Welcome to Velino TypeX</h1>
-      
-      </div>
-    
-    <!-- Rest of your app -->
-    <div class="container">
-<!-- LOGIN SCREEN -->
-<div id="loginScreen" class="login-screen">
-
-    <div class="login-box">
-
-        <h2>Velino TypeX</h2>
-
-        <!-- HOME -->
-        <div id="authHome">
-
-            <button onclick="showLogin()"> Sign In</button>
-
-            <button onclick="showRegister()">Register</button>
-            <button class="demo-btn" onclick="demoLogin() ">
-                Continue with Demo Account
-            </button>
-
-        </div>
-
-        <!-- LOGIN FORM -->
-        <div id="loginForm" style="display:none;">
-
-            <input type="text" id="username" placeholder="Username">
-
-            <input type="password" id="password" placeholder="Password">
-
-            <button onclick="login()">Login</button>
-
-            <button onclick="backHome()">Back</button>
-
-        </div>
-
-        <!-- REGISTER FORM -->
-        <div id="registerForm" style="display:none;">
-
-            <input type="text" id="newUser" placeholder="Create Username">
-
-            <input type="password" id="newPass" placeholder="Create Password">
-
-            <button onclick="register()">Create Account</button>
-
-            <button onclick="backHome()">Back</button>
-
-        </div>
-
-        <p id="loginError"></p>
-        <!-- <div class="login-hint">
-            <strong>Demo Account</strong><br>
-            Username: <b>admin</b><br>
-            Password: <b>admin123</b>
-        </div> -->
-    </div>
-
+  </div>
 </div>
-<div class="container" id="mainApp" style="display:none;">
-    <!-- <img src="https://i.postimg.cc/1RfJ1pFL/Chat-GPT-Image-Jun-11-2026-12-03-11-PM.png" class="logo"> -->
-    <div class="apple-logo-text">
+<script>
+  const text = "Freshers Job Alerts";
+  let i = 0;
+  
+  function typeWriter(){
+      if(i < text.length){
+          document.getElementById("typing").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter,100);
+      }
+  }
+  
+  typeWriter();
+  </script>
+  <!-- <script>
+    window.addEventListener("load", function(){
     
-        <span>V</span>
-        <span>E</span>
-        <span>L</span>
-        <span>I</span>
-        <span>N</span>
-        <span>O</span>
-        <span>&nbsp;</span>
-        <span>T</span>
-        <span>y</span>
-        <span>p</span>
-        <span>e</span>
-        <span>X</span>
-       
-    
-    </div>
-    <div class="topbar">
-
-        <div class="left-controls">
-    
-            <button onclick="newTest()">New Text</button>
-            <button onclick="clearStats()">Clear</button>
-            <button onclick="showResult()">Results</button>
-    
-            <select id="modeSelect">
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-    
-            <select id="timeSelect">
-                <option value="30">30 Sec</option>
-                <option value="60" selected>1 Min</option>
-                <option value="120">2 Min</option>
-                <option value="180">3 Min</option>
-                <option value="240">4 Min</option>
-                <option value="300">5 Min</option>
-            </select>
-    
-            <div class="switch-group">
-                <span>🔊</span>
-                <label class="switch">
-                    <input type="checkbox" id="soundToggle" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-    
-            <div class="switch-group">
-                <span>🌙</span>
-                <label class="switch">
-                    <input type="checkbox" id="themeToggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
-    
-        </div>
-    
-        <div class="stats">
-    
-            <div class="box">
-                <span class="label">WPM</span>
-                <h3 id="wpm">0</h3>
-            </div>
-    
-            <div class="box">
-                <span class="label">Accuracy</span>
-                <h3 id="acc">0</h3>
-            </div>
-    
-            <div class="box">
-                <span class="label">Error</span>
-                <h3 id="err">0</h3>
-            </div>
-    
-            <div class="box">
-                <span class="label">Time</span>
-                <h3 id="timer">60</h3>
-            </div>
-            <div class="box" id="userBox">
-                <span class="label">USER</span>
-                <h3 id="currentUser">Guest</h3>
-            </div>
-        </div>
-    
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div id="text"></div>
-    <div id="resultModal" class="result-modal">
-        <div class="result-box">
-            <h2>🏆 Typing Results</h2>
-    
-            <p>WPM: <span id="resultWpm">0</span></p>
-            <p>Accuracy: <span id="resultAcc">0</span>%</p>
-            <p>Errors: <span id="resultErr">0</span></p>
-    
-            <button onclick="closeResult()">Close</button>
-            <button onclick="newTest();closeResult();">New Test</button>
-        </div>
-    </div>
-   
-    <script>
-
-        
-
-function demoLogin(){
-
-document.getElementById("currentUser").innerText = "Demo User";
-
-document.getElementById("loginScreen").style.display = "none";
-
-document.getElementById("mainApp").style.display = "block";
-
-}
-        function showResult(){
-        
-            document.getElementById("resultWpm").innerText =
-            document.getElementById("wpm").innerText;
-        
-            document.getElementById("resultAcc").innerText =
-            document.getElementById("acc").innerText;
-        
-            document.getElementById("resultErr").innerText =
-            document.getElementById("err").innerText;
-        
-            document.getElementById("resultModal").style.display = "flex";
-        }
-        
-        function closeResult(){
-        
-            document.getElementById("resultModal").style.display = "none";
-        }
-        
-        function clearStats(){
-        
-            totalTyped = 0;
-            totalErrors = 0;
-        
-            document.getElementById("wpm").innerText = 0;
-            document.getElementById("acc").innerText = 0;
-            document.getElementById("err").innerText = 0;
-        }
-        
-        /* WORDS */
-        const words = [
-        "the","and","you","that","was","for","are","with","his","they",
-        "this","have","from","one","had","word","but","not","what","all"
-        ];
-        
-        let soundEnabled = true;
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
-        /* TEST STATE */
-        let testCompleted = false;
-        
-        /* TIMER */
-        let selectedTime = 60;
-        let timeLeft = 60;
-        let timerInterval = null;
-        let timerStarted = false;
-        
-        /* DATA */
-        let text = "";
-        let chars = [];
-        let index = 0;
-        
-        let typedState = [];
-        let errorMap = [];
-        
-        let totalTyped = 0;
-        let totalErrors = 0;
-        
-        let startTime = Date.now();
-        
-        /* SOUND */
-        function beep(freq,duration){
-        
-            if(!soundEnabled) return;
-        
-            let o = audioCtx.createOscillator();
-            let g = audioCtx.createGain();
-        
-            o.connect(g);
-            g.connect(audioCtx.destination);
-        
-            o.frequency.value = freq;
-        
-            o.start();
-        
-            g.gain.exponentialRampToValueAtTime(
-                0.0001,
-                audioCtx.currentTime + duration
-            );
-        
-            o.stop(audioCtx.currentTime + duration);
-        }
-        
-        /* TIMER */
-        function startTimer(){
-        
-            if(timerStarted) return;
-        
-            timerStarted = true;
-        
-            timerInterval = setInterval(()=>{
-        
-                timeLeft--;
-        
-                document.getElementById("timer").innerText = timeLeft;
-        
-                if(timeLeft <= 0){
-        
-                    clearInterval(timerInterval);
-        
-                    showResult();
-                }
-        
-            },1000);
-        }
-        
-        /* GENERATE TEXT */
-        function generateText(){
-        
-            let arr = [];
-        
-            for(let i=0;i<50;i++){
-        
-                arr.push(
-                    words[Math.floor(Math.random()*words.length)]
-                );
-            }
-        
-            return arr.join(" ");
-        }
-        
-        /* NEW TEST */
-        function newTest(){
-        
-            closeResult();
-        
-            testCompleted = false;
-        
-            clearInterval(timerInterval);
-        
-            selectedTime = parseInt(
-                document.getElementById("timeSelect").value
-            );
-        
-            timeLeft = selectedTime;
-        
-            timerStarted = false;
-        
-            document.getElementById("timer").innerText = timeLeft;
-        
-            text = generateText();
-        
-            chars = text.split("");
-        
-            index = 0;
-        
-            typedState = [];
-            errorMap = [];
-        
-            totalTyped = 0;
-            totalErrors = 0;
-        
-            startTime = Date.now();
-        
-            renderText();
-        
-            updateStats();
-        }
-        
-        /* RENDER */
-        function renderText(){
-        
-            let html = "";
-        
-            for(let i=0;i<chars.length;i++){
-        
-                let cls = "char";
-        
-                if(errorMap[i])
-                    cls += " wrong";
-        
-                if(typedState[i] === "correct")
-                    cls += " correct";
-        
-                if(i === index)
-                    cls += " current";
-        
-                html += `<span class="${cls}">
-                ${chars[i] === " " ? "&nbsp;" : chars[i]}
-                </span>`;
-            }
-        
-            document.getElementById("text").innerHTML = html;
-        }
-        
-        /* KEYBOARD */
-        document.addEventListener("keydown",(e)=>{
-        
-            if(!chars.length) return;
-        
-            if(e.key.length !== 1 && e.key !== "Backspace")
-                return;
-        
-            /* BACKSPACE */
-            if(e.key === "Backspace"){
-        
-                if(index > 0){
-        
-                    index--;
-        
-                    typedState[index] = null;
-                    errorMap[index] = false;
-                }
-        
-                renderText();
-                updateStats();
-        
-                return;
-            }
-        
-            /* START TIMER */
-            if(totalTyped === 0){
-        
-                startTime = Date.now();
-        
-                startTimer();
-            }
-        
-            totalTyped++;
-        
-            let expected = chars[index];
-        
-            /* CORRECT */
-            if(e.key === expected){
-        
-                typedState[index] = "correct";
-        
-                beep(600,0.05);
-        
-                index++;
-            }
-        
-            /* WRONG */
-            else{
-        
-                typedState[index] = "wrong";
-        
-                errorMap[index] = true;
-        
-                totalErrors++;
-        
-                beep(150,0.1);
-            }
-        
-            renderText();
-        
-            updateStats();
-        
-            /* COMPLETE */
-            if(index >= chars.length && !testCompleted){
-        
-                testCompleted = true;
-        
-                clearInterval(timerInterval);
-        
-                showResult();
-            }
-        });
-        
-        /* STATS */
-        function updateStats(){
-        
-            let time =
-            (Date.now() - startTime) / 60000;
-        
-            if(time <= 0)
-                time = 0.01;
-        
-            let wpm =
-            Math.round((totalTyped / 5) / time);
-        
-            let acc =
-            totalTyped === 0
-            ? 0
-            : Math.max(
-                0,
-                Math.round(
-                    ((totalTyped-totalErrors)/totalTyped)*100
-                )
-            );
-        
-            document.getElementById("wpm").innerText = wpm;
-            document.getElementById("acc").innerText = acc;
-            document.getElementById("err").innerText = totalErrors;
-        }
-        
-        /* CONTROLS */
-        document.getElementById("soundToggle").onchange =
-        e => soundEnabled = e.target.checked;
-        
-        document.getElementById("themeToggle").onchange =
-        e => document.body.classList.toggle(
-        "light",
-        e.target.checked
-        );
-        
-        document.getElementById("modeSelect").onchange =
-        newTest;
-        
-        document.getElementById("timeSelect").onchange =
-        newTest;
-        
-        
-        /* START */
-        newTest();
-        
-        function showLogin(){
-
-document.getElementById("authHome").style.display = "none";
-document.getElementById("loginForm").style.display = "block";
-document.getElementById("registerForm").style.display = "none";
-}
-
-function showRegister(){
-
-document.getElementById("authHome").style.display = "none";
-document.getElementById("registerForm").style.display = "block";
-document.getElementById("loginForm").style.display = "none";
-}
-
-function backHome(){
-
-document.getElementById("authHome").style.display = "block";
-document.getElementById("loginForm").style.display = "none";
-document.getElementById("registerForm").style.display = "none";
-
-document.getElementById("loginError").innerText = "";
-}
-
-function register(){
-
-const user =
-document.getElementById("newUser").value;
-
-const pass =
-document.getElementById("newPass").value;
-
-if(user === "" || pass === ""){
-
-    document.getElementById("loginError").innerText =
-    "Please fill all fields";
-
-    return;
-}
-
-localStorage.setItem("velinoUser", user);
-localStorage.setItem("velinoPass", pass);
-
-document.getElementById("loginError").innerText =
-"Account created successfully!";
-
-showLogin();
-}
-
-function login(){
-
-const user =
-document.getElementById("username").value.trim();
-
-const pass =
-document.getElementById("password").value.trim();
-
-const savedUser =
-localStorage.getItem("velinoUser");
-
-const savedPass =
-localStorage.getItem("velinoPass");
-
-/* Default Account */
-const defaultUser = "admin";
-const defaultPass = "admin123";
-
-if(
-    (user === defaultUser && pass === defaultPass) ||
-    (user === savedUser && pass === savedPass)
-){
-
-    document.getElementById("currentUser").innerText = user;
-
-    document.getElementById("loginScreen").style.display = "none";
-
-    document.getElementById("mainApp").style.display = "block";
-
-}else{
-
-    document.getElementById("loginError").innerText =
-    "Invalid Username or Password";
-}
-}
-window.onload = function () {
-
-const splash = document.getElementById("splash-screen");
-const welcome = document.getElementById("welcomeScreen");
-const login = document.getElementById("loginScreen");
-
-// Hide everything except splash
-welcome.classList.remove("show");
-login.style.display = "none";
-
-// Splash visible for 2.5 seconds
-setTimeout(() => {
-
-    splash.classList.add("fade-out");
-
-    setTimeout(() => {
-
-        splash.style.display = "none";
-
-        // Show Welcome Screen
-        welcome.classList.add("show");
-
-        // Welcome visible for 2.5 seconds
         setTimeout(() => {
-
-            welcome.classList.remove("show");
-
-            setTimeout(() => {
-
-                welcome.style.display = "none";
-
-                // Show Login
-                login.style.display = "flex";
-
-            }, 800);
-
+            document.getElementById("splash")
+                    .classList.add("hide-splash");
         }, 2500);
+    
+    });
+    </script> -->
+<header>
+  <div class="particles">
 
-    }, 800);
-
-}, 2500);
-
-};
-        </script>
-<div class="ticker-wrap">
-    <div class="ticker">
-        VELINO IDE &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        DUM-E  &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO BOARD S1 &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        BIONIC HAND &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO TYPEX &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO MAP NAVIGATOR &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO VADDI CALCULATOR APP &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO SMART MEDICINE REMINDER &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO AIR PAD &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO CALC PRO &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO MECANUM ROBOT &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO FOOD ROBOT &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO C3 AI &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        MASTER SLAVE ROBOTIC ARM &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO SMART HOME &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO AUTOMATION SYSTEM &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO POTHOLE DETECTION &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VADDI CALCULATOR &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        SV TECH SOLUTIONS &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        SV CREATIONS MARK-56 &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        ARDUINO PROJECTS &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        ELECTRON APPS &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        MIT APP INVENTOR APPS &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp;
-        VELINO ECOSYSTEM
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    
     </div>
+<div class="logo">
+
+  <div class="logo-icon">
+    <img src="https://i.postimg.cc/52gyc2ZD/Chat-GPT-Image-May-23-2026-02-06-09-PM-2.png" alt="Freshers Job Alerts Logo">
 </div>
-<style>/* ========================= */
-    /* BOTTOM SCROLLING TICKER   */
-    /* ========================= */
-    
-    .ticker-wrap{
-        position:fixed;
-        bottom:0;
-        left:0;
+<style>.logo-icon{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  overflow:hidden;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+/* =========================
+   JOB OPENINGS SECTION
+========================= */
+
+.jobs-section{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 15px;
+    text-align:center;
+}
+
+.jobs-section h2{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#f4f0f0;
+}
+
+.jobs-section p{
+    font-size:16px;
+    color:#ffffff;
+    margin-bottom:20px;
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.social-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    width:100%;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media(max-width:480px){
+
+    .jobs-section h2{
+        font-size:22px;
+    }
+
+    .social-links{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .social-links a{
         width:100%;
-        height:35px;
-        background:#0b1220;
-        border-top:1px solid rgba(255,255,255,0.1);
-        overflow:hidden;
-        z-index:9999;
+        min-height:56px;
+        font-size:15px;
+        border-radius:10px;
     }
+}
+</style>
+
+<div class="logo-text">
+<h1>Freshers Job Alerts</h1>
+<p>Daily Walk-ins & Hiring Updates</p>
+</div>
+
+</div>
+
+<nav>
+<a href="#jobs">Jobs</a>
+<a href="#apply">Apply</a>
+<a href="#categories">Categories</a>
+<a href="#social">Social</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+  <h2>
+    🚀 Freshers Job Alerts
+    </h2>
     
-    .ticker{
-        white-space:nowrap;
-        color:#f9feff;
-        font-size:14px;
-        line-height:35px;
-        font-weight:600;
-        text-shadow:0 0 10px rgba(0,195,255,0.5);
-        animation:tickerScroll 25s linear infinite;
-    }
+    <p>
+    Daily Walk-ins • Freshers Hiring • Off-Campus Drives • Internships
+    </p>
+
+<p>
+Get daily hiring updates, walk-in drives, off-campus opportunities,
+IT and Non-IT jobs from top companies across India.
+</p>
+
+
+<section class="social" id="social">
+
+  <h4 class="section-title">Join Our Community</h4>
+  
+  <div class="social-links">
+  
+  
+  <a href="https://instagram.com/freshers.job.alerts"
+     target="_blank">
+     Follow Instagram
+  </a>
+  
+  </div>
+  <section class="jobs-section">
+    <h2>Current Job Openings in Hyderabad</h2>
+    <p>Application Links</p>
+
+    <div class="social-links">
+
+        <a href="https://www.naukri.com/job-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041?src=jobsearchDesk&sid=1780063327896398_6&xp=2&px=1" target="_blank">Tech Mahindra</a>
+
+        <a href="https://www.naukri.com/job-listings-walk-in-drive-for-freshers-cognizant-hyderabad-0-to-0-years-230626008170?src=sortby&sid=17822160727818329_3&xp=5&px=3&nignbevent_src=jobsearchDeskGNB" target="_blank">Cognizant</a>
+
+        <a href="https://www.tcsion.com/hub/national-qualifier-test/" target="_blank">TCS NQT</a>
+
+        <a href="https://www.naukri.com/job-listings-walk-in-amazon-customer-support-role-hyderabad-amazon-hyderabad-0-to-5-years-170626019214?src=sortby&sid=17816965034584097_1&xp=18&px=1&nignbevent_src=jobsearchDeskGNB" target="_blank">Amazon 26th june </a>
+
+        <a href="https://www.naukri.com/job-listings-chat-support-executive-firstsource-hyderabad-0-to-2-years-280526012925" target="_blank">Firstsource</a>
+
+        <a href="https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470" target="_blank">Deloitte</a>
+
+         <a href="https://www.naukri.com/job-listings-process-associate-24-7-ai-bengaluru-1-to-2-years-120526005346?src=jobsearchDesk&sid=17807670765475455_5&xp=11&px=2&nignbevent_src=jobsearchDeskGNB" target="_blank"> [24]7.ai </a> 
+
+         <a href="https://www.naukri.com/job-listings-walk-in-gis-mapping-non-voice-tech-mahindra-hyderabad-0-to-1-years-120526034890?src=sortby&sid=17807371577051577_1&xp=11&px=1&nignbevent_src=jobsearchDeskGNB" target="_blank">Tech-M GIS</a> 
+
+        <a href="https://www.naukri.com/job-listings-customer-service-voice-hyderabad-genpact-karimnagar-khammam-hyderabad-0-to-3-years-020626012768" target="_blank">Genpact</a>
+
+        <a href="https://www.naukri.com/job-listings-customer-support-international-voice-tech-mahindra-hyderabad-0-to-4-years-030626014964" target="_blank">Tech Mahindra Voice</a>
+
+      
+    </div>
+</section>
+  </section>
+
+</section>
+<section>
+  <div class="social-links">
     
-    @keyframes tickerScroll{
-        0%{
-            transform:translateX(100%);
-        }
-        100%{
-            transform:translateX(-100%);
-        }
-    }</style>
+  </div>
+</section>
+
+
+
+<section class="slider-section">
+
+<h2 class="section-title">Top Hiring Companies</h2>
+
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="https://i.postimg.cc/5tXxZ2xZ/amazon-logo-1.webp">
+<img src="https://i.postimg.cc/cJvsVLsj/hcl.png">
+<img src="https://i.postimg.cc/tgsXL4X8/ibm.png">
+<img src="https://i.postimg.cc/jjDsGSsp/infosys.png">
+<img src="https://i.postimg.cc/HLrpfkYG/microsoft.png">
+<img src="https://i.postimg.cc/vm4QpZYw/nvidia.png">
+<img src="https://i.postimg.cc/rpD8vwVL/tcs.png">
+<img src="https://i.postimg.cc/PqCtB5XH/techm.png">
+<img src="https://i.postimg.cc/5tXxZ241/wipro.jpg">
+<img src="https://i.postimg.cc/jjDsGSxx/zf.png">
+<img src="https://i.postimg.cc/PqCtB5t3/accemture.jpg">
+<img src="https://i.postimg.cc/cJvsVLs2/capgemini.jpg">
+
+
+<img src="https://i.postimg.cc/5tXxZ2xZ/amazon-logo-1.webp">
+<img src="https://i.postimg.cc/cJvsVLsj/hcl.png">
+<img src="https://i.postimg.cc/tgsXL4X8/ibm.png">
+<img src="https://i.postimg.cc/jjDsGSsp/infosys.png">
+<img src="https://i.postimg.cc/HLrpfkYG/microsoft.png">
+<img src="https://i.postimg.cc/vm4QpZYw/nvidia.png">
+<img src="https://i.postimg.cc/rpD8vwVL/tcs.png">
+<img src="https://i.postimg.cc/PqCtB5XH/techm.png">
+<img src="https://i.postimg.cc/5tXxZ241/wipro.jpg">
+<img src="https://i.postimg.cc/jjDsGSxx/zf.png">
+<img src="https://i.postimg.cc/PqCtB5t3/accemture.jpg">
+<img src="https://i.postimg.cc/cJvsVLs2/capgemini.jpg">
+</div>
+
+</div>
+
+</section>
+<section class="categories" id="categories">
+
+  <h2 class="section-title">Categories</h2>
+  
+  <div class="category-grid">
+  
+  
+  <div class="category" onclick="openModal('walkin')">
+  Walk-In Drives
+  </div>
+
+  
+  <div class="category" onclick="openModal('wfh')">
+  Work From Home
+  </div>
+  
+  </div>
+  
+  </section>
+  <div id="jobModal" class="modal">
+
+    <div class="modal-content">
+    
+    <span class="close" onclick="closeModal()">&times;</span>
+    
+    <h2 id="modalTitle"></h2>
+    
+    <div id="modalLinks"></div>
+    
+    </div>
+    
+    </div>
+    <style>.modal{
+      display:none;
+      position:fixed;
+      z-index:9999;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background:rgba(241, 241, 241, 0.7);
+      }
+      
+      .modal-content{
+      background:rgb(255, 255, 255);
+      width:90%;
+      max-width:500px;
+      margin:10% auto;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      }
+      
+      .modal-content h2{
+      color:#0541c1;
+      margin-bottom:20px;
+      }
+      
+      .modal-content a{
+      display:block;
+      margin:10px 0;
+      padding:12px;
+      background:#0541c1;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      }
+      
+      .close{
+      float:right;
+      font-size:30px;
+      cursor:pointer;
+      color:red;
+      }</style>
+      <script>
+       function proceedSite(){
+
+const btn = document.querySelector(".splash-buttons button");
+
+btn.innerHTML = "Opening...";
+btn.disabled = true;
+
+document.getElementById("splash")
+        .classList.add("hide-splash");
+
+fetch(
+  "https://script.google.com/macros/s/AKfycbwXMyYxr5MpWIWekFEzFOdg2l7jDpvpuRdSTPUcEByGGBEMytqYm0gJeIWFq4LGuMgtgw/exec",
+  {
+    method:"POST",
+    mode:"no-cors"
+  }
+).catch(() => {});
+}
+        </script>
+        <style>.splash-buttons button{
+          background:rgb(42, 104, 191);
+          color:rgb(240, 237, 237);
+          border:none;
+          padding:12px 30px;
+          border-radius:10px;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+          transition:0.3s;
+      }
+      
+      .splash-buttons button:active{
+          transform:scale(0.95);
+      }</style>
+<script>
+  const categoryLinks = {
+  // ------------------------------------------------------------------------------------------------
+  // Freshers Jobs
+    // ------------------------------------------------------------------------------------------------
+  freshers: {
+  title: "Freshers Jobs",
+  links: [
+  ["Infosys Careers","https://career.infosys.com"],
+  ["TCS NextStep","https://nextstep.tcs.com"],
+  ["Wipro Careers","https://careers.wipro.com"]
+  ]
+  },
+    // ------------------------------------------------------------------------------------------------
+    // Walk-In Drives
+      // ------------------------------------------------------------------------------------------------
+  walkin: {
+  title: "Walk-In Drives",
+  links: [
+  // ["Wipro Walk-In","https://www.naukri.com"],
+  ["Tech Mahindra Walk-In","https://l.instagram.com/?u=https%3A%2F%2Fwww.naukri.com%2Fjob-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041%3Fsrc%3DjobsearchDesk%26sid%3D1780063327896398_6%26xp%3D2%26px%3D1%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn203MZp0tRTMwe5qbhXfATCdRwqr4gv1J_OTnyObxcHLvZtauPhGINu3xVZ0_aem_zFhnoHDRBTE9iH5x6L-KHw&e=AUDio7wXjlRQT5JJtTyUmw_Cq1c--q7agvhiVoz_xG0Jy-fYhLSIs358B8g3BV7eUjcZ9ojrdrEyQOP7yILnodaybZXqdBUS3zo3ThR7bhBZwTTBT8SyCZe1mcHezkLAKHYZ-7DHQwx3ZpXCCQwHbMZCx5Az"],
+  ["Cognizant Walk-In","https://www.naukri.com"],
+  ["Sagility Walk-In","https://www.naukri.com/job-listings-international-voice-process-only-freshers-sagility-india-hyderabad-0-to-1-years-010626005033?src=jobsearchDesk&sid=1780307116928918_8&xp=1&px=2"],
+  ["Accenture Walk-In","https://www.naukri.com/job-listings-walk-in-drive-for-customer-support-role-international-voice-process-accenture-hyderabad-1-to-6-years-010626004938?src=sortby&sid=1780307116928918_1&xp=14&px=1&nignbevent_src=jobsearchDeskGNB"],
+  ["Wipro Walk-In","https://www.naukri.com/job-listings-walkin-interview-for-content-writer-3rd-to-5th-june-wipro-hyderabad-0-to-1-years-100226036492?src=sortby&sid=1780307116928918_2&xp=16&px=2&nignbevent_src=jobsearchDeskGNB"],
+  ["Deloitte Walk-In","https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470?utm_source=commonjobs&utm_medium=referral&utm_campaign=job_listing"]
+  ]
+  }, 
+    // ------------------------------------------------------------------------------------------------
+    // Work From Home Jobs
+      // ------------------------------------------------------------------------------------------------
+  wfh: {
+  title: "Work From Home Jobs",
+  links: [
+  ["Amazon WFH","https://www.amazon.jobs"],
+  ["Tech Support WFH","https://www.naukri.com"],
+  ["Customer Support WFH","https://www.naukri.com"]
+  ]
+  }
+  };
+  
+  function openModal(category){
+  
+  const modal = document.getElementById("jobModal");
+  const title = document.getElementById("modalTitle");
+  const links = document.getElementById("modalLinks");
+  
+  title.innerText = categoryLinks[category].title;
+  
+  links.innerHTML = "";
+  
+  categoryLinks[category].links.forEach(item => {
+  
+  links.innerHTML += `
+  <a href="${item[1]}" target="_blank">
+  ${item[0]}
+  </a>
+  `;
+  
+  });
+  
+  modal.style.display = "block";
+  
+  }
+  
+  function closeModal(){
+  document.getElementById("jobModal").style.display = "none";
+  }
+  
+  window.onclick = function(event){
+  
+  const modal = document.getElementById("jobModal"); 
+  if(event.target == modal){
+  modal.style.display = "none";
+  } 
+  }
+  </script>
+
+<section class="quick-apply" id="apply">
+
+  <h2 class="section-title">Quick Apply Links</h2>
+  
+  <div class="company-grid">
+  
+  <a href="https://www.amazon.jobs" target="_blank">
+  Amazon Careers
+  </a>
+  
+  <a href="https://www.tcsion.com/hub/national-qualifier-test/" target="_blank">
+  TCS NQT
+  </a>
+  
+  <a href="https://career.infosys.com" target="_blank">
+  Infosys Careers
+  </a>
+  
+  <a href="https://nextstep.tcs.com" target="_blank">
+  TCS NextStep
+  </a>
+  
+  <a href="https://www.naukri.com/job-listings-walk-in-drive-for-fresher-for-mapping-role-ll-30-may-wipro-hyderabad-0-to-0-years-290526010675" target="_blank">
+  Wipro Careers
+  </a>
+  
+  <a href="https://careers.cognizant.com" target="_blank">
+  Cognizant Careers
+  </a>
+  
+  <a href="https://www.accenture.com/in-en/careers" target="_blank">
+  Accenture Careers
+  </a>
+  
+  <a href="https://www.naukri.com/job-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041" target="_blank">
+  Tech Mahindra Jobs
+  </a>
+  
+  <a href="https://www.naukri.com/bosch-jobs" target="_blank">
+  Bosch Jobs
+  </a>
+  
+  <a href="https://careers.mobisindia.com" target="_blank">
+  Hyundai Mobis Careers
+  </a>
+  
+  <a href="https://www.nvidia.com/en-in/about-nvidia/careers/" target="_blank">
+  NVIDIA Careers
+  </a>
+  
+  <a href="https://www.hcltech.com/careers" target="_blank">
+  HCL Careers
+  </a>
+  
+  <a href="https://www.ibm.com/careers" target="_blank">
+  IBM Careers
+  </a>
+  
+  <a href="https://www.capgemini.com/careers/" target="_blank">
+  Capgemini Careers
+  </a>
+  
+  <a href="https://careers.microsoft.com" target="_blank">
+  Microsoft Careers
+  </a>
+  
+  <a href="https://www.deloitte.com/global/en/careers.html" target="_blank">
+  Deloitte Careers
+  </a>
+  
+  </div>
+  
+  </section>
+  <script>
+    const companyLinks = {
+      amazon: "https://www.amazon.jobs",
+      infosys: "https://career.infosys.com",
+      tcs: "https://nextstep.tcs.com",
+      tcsnqt: "https://www.tcsion.com/hub/national-qualifier-test/",
+    
+      wipro: "https://www.naukri.com/job-listings-walk-in-drive-for-fresher-for-mapping-role-ll-30-may-wipro-hyderabad-0-to-0-years-290526010675",
+    
+      cognizant: "https://careers.cognizant.com",
+    
+      accenture: "https://www.accenture.com/in-en/careers",
+    
+      techmahindra: "https://www.naukri.com/job-listings-customer-support-executive-tech-mahindra-hyderabad-1-to-6-years-220426023041",
+    
+      bosch: "https://www.naukri.com/bosch-jobs",
+    
+      hyundaimobis: "https://careers.mobisindia.com",
+    
+      nvidia: "https://www.nvidia.com/en-in/about-nvidia/careers/",
+    
+      hcl: "https://www.hcltech.com/careers",
+    
+      ibm: "https://www.ibm.com/careers",
+    
+      capgemini: "https://www.capgemini.com/careers/",
+    
+      microsoft: "https://careers.microsoft.com",
+    
+      deloitte: "https://www.deloitte.com/global/en/careers.html"
+    };
+    </script>
+<section class="social" id="social">
+
+<h2 class="section-title">Join Our Community</h2>
+
+<div class="social-links">
+
+<a href="https://instagram.com/freshers.job.alerts">Instagram</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Freshers Job Alerts. All Rights Reserved.
+
+</footer>
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".job-card");
+
+searchInput.addEventListener("keyup", function(){
+const value = this.value.toLowerCase();
+cards.forEach(card => {
+const text = card.innerText.toLowerCase();
+card.style.display =
+text.includes(value) ? "block" : "none";
+});
+});
+</script>
 </body>
 </html>
